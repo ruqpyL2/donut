@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Pasadena CSC Donut Calculator for Earth Day 2018" />
+    <meta name="author" content="Pasadena Complete Streets Coalition https://www.pasadenacsc.org" />
+    <title>You Donut Have to Travel Very Far to Be Green</title>
+    <!-- CSS and custom fonts-->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="donut.css" rel="stylesheet" />
+  </head>
+  <body>
+<div class="row">
+<div class="col-md"><h1>You donut have to travel very far to be green!</h1></div>
+</div>
+
+ <div class="row">
+ <div class="col-md-9 align-self-end"><p>How much CO<sub>2</sub> can you save and how many donuts can you eat if you walk or bike on your next short trip? Find out here!</p></div>
+ <div class="col-md-3 align-self-end d-flex justify-content-center"><img src="donut.gif" align="right"></div>
+ </div>
+<div id="form">
+<form action="" id="donutCalcForm" onsubmit="return false;">
+  <div class="row">
+  <div class="col-md">
+  <div><label for="userDistance">Your round trip mileage:</label>
+       <input type="text" id="userDistance" name="userDistance" size="4" value="1" onChange="calculateAll()"></input></div>
+  <div><label for="userWeight">Your weight (lbs):</label>
+       <input type="text" id="userWeight" name="userWeight" value="150" maxlength="4" size="4" onChange="calculateAll()"></input></div>
+  
+  <div><label for="travelMode">Your mode of travel:</label>
+  <select id="travelMode" name="travelMode" onChange="calculateAll()">
+  <optgroup label="On Foot">
+  <option selected value="walkMod">Walking, moderate pace (3 mph)</option>
+  <option value="walkBrisk">Walking, brisk pace (4 mph)</option>
+  <option value="run">Running (12 min mile)</option>
+  </optgroup>
+  <optgroup label="On Wheels">
+  <option value="bikeLeisure">Biking, leisurely pace (&lt;10 mph)</option>
+  <option value="bikeMod">Biking, moderate pace (13 mph)</option>
+  <option value="unicycle">Unicycling</option>
+  <option value="skateboard">Skateboarding</option>
+  <option value="skating">In-line skating</option>
+  </optgroup>
+  </select></div>
+  <div><label for="userFuel">Fuel efficiency of your car (mpg):</label>
+       <input type="text" id="userFuel" name="userFuel" value="25" maxlength=2" size=2"onChange="calculateAll()"></input></div>
+  </div>
+  </div>
+    </form>
+<div class="row">
+<div class="col-md mt-4">
+<div id="calcResults"></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md">
+<p style="font-size:0.8rem; line-height:1rem">* Tree-day = amount of CO<sub>2</sub> absorbed by a mature tree in one day</p>
+</div>
+</div>
+
+  </div>
+
+<div class="row">
+<div class="col-md my-3">
+<p>Do you wish that you could walk or bike more often, but don't feel safe? <strong>We get it</strong>. That's why we're here: we want Pasadena's streets to be as safe as possible for everyone, including <strong>you</strong>. Learn more about <a href="../">our group</a>.</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-9">
+<p>Curious about these <a href="faq.html">numbers?</a></p>
+</div>
+</div>
+  <!-- Footer -->
+        <div>
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="../">
+                <img src="../img/logo_small.jpg" />
+              </a>
+            </li>
+            <li class="list-inline-item" style="font-size:0.8rem">A project of the 
+            <a href="../">Pasadena Complete Streets Coalition</a></li>
+            <li class="list-inline-item" style="font-size:0.8rem"> Last updated: April 18, 2018</li>
+          </ul>
+        </div>
+
+        </body>
+            <!-- JavaScript -->
+  <script src="donut.js"></script> 
+</html>

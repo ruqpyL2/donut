@@ -1,0 +1,31 @@
+body {
+  font-family: 'Corbel', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #454545;
+  margin: 40px auto;
+  max-width: 600px;  
+  padding: 0 10px;
+}
+
+#form {
+    border-style:solid;
+    border-color:#6AC5AC;
+    border-width: 3px;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+}  
+h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+    font-weight:600;}
+p, form {
+    font-size: 1.2rem;
+    line-height:1.4rem;
+}
+p.error {
+    color:#ff8800;
+}
+
+ul, li{
+    style:inline;
+}
