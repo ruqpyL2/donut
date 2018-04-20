@@ -7,8 +7,8 @@ transportationMode["run"]=[8.3,5,"running"];
 transportationMode["bikeLeisure"]=[8,9,"riding a bike"];
 transportationMode["bikeMod"]=[5.8,13,"riding a bike"];
 transportationMode["unicycle"]=[5,7,"unicycling"]; 
-transportationMode["skateboard"]=[5,9,"riding a skateboard"]; 
-transportationMode["skating"]=[7.5,9],"skating";
+transportationMode["skateboard"]=[5,9,"skating"]; 
+transportationMode["skating"]=[7.5,9,"skating"];
 
 function calculateAll() {
   // This calls up the values from the form and makes sure the input is numerical, greater than 0
@@ -41,7 +41,7 @@ transData = transportationMode[selectedMode];
     var treeDays = (18.9 / (fuelEff * 0.13)).toFixed(1);
   // Write to page
 	document.getElementById("calcResults").innerHTML = 
-    "<p>By "+transData[2]+"  just "+Math.round(transitTime)+" minutes for your next trip:</p><p><strong>You can eat "+donuts+" donuts and save "+treeDays+" tree-days<sup>*</sup> worth of CO<sub>2</sub>!</strong></p>";
+    "<p>By "+transData[2]+"  for "+Math.round(transitTime/2)+" minutes each way on your next trip:</p><h4>You can eat "+donuts+" donuts and save "+treeDays+" tree-days<sup>*</sup> worth of CO<sub>2</sub>!</h4>";
 }
 
 calculateAll()
