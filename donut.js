@@ -28,7 +28,7 @@ function calculateAll() {
     document.getElementById("calcResults").innerHTML = "<p class=\"error\">Please enter a fuel efficiency greater than 0.</p>";
     return;
     }
-transData = transportationMode[selectedMode];
+    transData = transportationMode[selectedMode];
   // Calculate the transit time for the user's selected transportation mode   // time (min) = distance / mph * 60
     var transitTime = inputDistance / transData[1] * 60;
   // Calculate the calories and convert to donuts
@@ -37,8 +37,8 @@ transData = transportationMode[selectedMode];
     var calories = transData[0] * inputWeight * transitTime * 0.0079;
     var donuts = (calories / 250).toFixed(1);
   // Calculate lbs CO2 and tree-days
-  // Tree-days = 18.9 lb CO2 / fuelEff /0.13 lb CO2
-    var treeDays = (18.9 / (fuelEff * 0.13)).toFixed(1);
+  // Tree-days = mileage x 18.9 lb CO2 / fuelEff /0.13 lb CO2
+    var treeDays = ((inputDistance * 18.9) / (fuelEff * 0.13)).toFixed(1);
   // Write to page
 	document.getElementById("calcResults").innerHTML = 
     "<p>By "+transData[2]+"  for "+Math.round(transitTime/2)+" minutes each way on your next trip:</p><h4>You can eat "+donuts+" donuts and save "+treeDays+" tree-days<sup>*</sup> worth of CO<sub>2</sub>!</h4>";
