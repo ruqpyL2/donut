@@ -7,26 +7,25 @@
     <meta name="author" content="Pasadena Complete Streets Coalition https://www.pasadenacsc.org" />
     <title>DonutTree Calculator - PasCSC</title>
     <!-- CSS and custom fonts-->
-    <link href="../og/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="donut.css" rel="stylesheet" />
   </head>
   <body>
 <div class="row">
-<div class="col-md"><h1>You donut have to travel very far to be green!</h1></div>
+<div class="col"><h1>You donut have to travel very far to be green!</h1></div>
 </div>
 
  <div class="row">
  <div class="col-md-9 align-self-end"><h4>How much CO<sub>2</sub> can you save and how many donuts can you eat if you walk or bike on your next short trip? Find out here!</h4></div>
  <div class="col-md-3 align-self-end d-flex justify-content-center"><img src="donut.gif" align="right"></div>
  </div>
-<div id="form">
-<form action="" id="donutCalcForm" onsubmit="return false;">
+<div id="maincalc">
   <div class="row">
   <div class="col-md">
+  <form action="" id="donutCalcForm">
   <div><label for="userDistance">Your round trip mileage:</label>
-       <input type="text" id="userDistance" name="userDistance" size="4" value="1" onChange="calculateAll()"></input></div>
+       <input type="text" id="userDistance" name="userDistance" size="4" value="1" onChange="calculateAll();"></input></div>
   <div><label for="userWeight">Your weight (lbs):</label>
-       <input type="text" id="userWeight" name="userWeight" value="150" maxlength="4" size="4" onChange="calculateAll()"></input></div>
+       <input type="text" id="userWeight" name="userWeight" value="150" maxlength="4" size="4" onChange="calculateAll();"></input></div>
   
   <div><label for="travelMode">Your mode of travel:</label>
   <select id="travelMode" name="travelMode" onChange="calculateAll()">
@@ -45,33 +44,33 @@
   </select></div>
   <div><label for="userFuel">Fuel efficiency of your car (mpg):</label>
        <input type="text" id="userFuel" name="userFuel" value="25" maxlength="2" size="2" onChange="calculateAll()"></input></div>
+  <div><button type="reset" value="Reset" onClick="resetCalc();">Reset values</button></div></form>
   </div>
   </div>
-    </form>
+  <div id="results">
 <div class="row">
-<div class="col-md mt-4">
+<div class="col-md">
 <div id="calcResults"></div>
 </div>
 </div>
 <div class="row">
 <div class="col-md">
-<p style="font-size:0.8rem; line-height:1rem">* Tree-day = amount of CO<sub>2</sub> absorbed by a mature tree in one day</p>
+<p class="footnote">* Tree-day = amount of CO<sub>2</sub> absorbed by a mature tree in one day</p>
 <p>Curious about these <a href="faq.html">numbers?</a></p>
 </div>
 </div>
 </div>
 </div>
-
   </div>
 
+<div id="footer">
 <div class="row">
-<div class="col-md my-3 text-center">
+<div class="col-md text-center">
 <h4>Do you wish that you could walk or bike more often, but you're concerned about safety?</h4> <h2>We get it.</h2> <h4>That's why we work: we want Pasadena's streets to be as safe as possible for everyone, including <strong>you</strong>!</h4> 
 <h4><a href="../">Find out more</a>.</h4>
 </div>
 </div>
-  <!-- Footer -->
-        <div class="row"><div class="col-md mt-3 text-center">
+        <div class="row"><div class="col-md text-center">
           <ul class="list-inline">
             <li class="list-inline-item">
               <a href="../">
@@ -80,9 +79,10 @@
             </li>
             <li class="list-inline-item" style="font-size:0.8rem">A project of the 
             <a href="../">Pasadena Complete Streets Coalition</a></li>
-            <li class="list-inline-item" style="font-size:0.8rem"> Last updated: April 19, 2018</li>
+            <li class="list-inline-item" style="font-size:0.8rem"> Last updated: April 29, 2018</li>
           <li style="font-size:0.8rem"><a href="https://commons.wikimedia.org/wiki/File:Twemoji_1f369.svg">Donut emoji</a> by <a href="https://www.twitter.com">Twitter</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY 4.0</a></li></ul>
         </div></div>
+ </div>
         </body>
             <!-- JavaScript -->
   <script src="donut.js"></script> 

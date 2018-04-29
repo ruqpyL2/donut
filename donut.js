@@ -41,7 +41,11 @@ function calculateAll() {
     var treeDays = ((inputDistance * 18.9) / (fuelEff * 0.13)).toFixed(1);
   // Write to page
 	document.getElementById("calcResults").innerHTML = 
-    "<p>By "+transData[2]+"  for "+Math.round(transitTime/2)+" minutes each way on your next trip:</p><h4>You can eat "+donuts+" donuts and save "+treeDays+" tree-days<sup>*</sup> worth of CO<sub>2</sub>!</h4>";
+    "<p>By "+transData[2]+"  for "+Math.round(transitTime/2)+" minutes each way on your next trip:</p><h3>You can eat "+donuts+" donuts and save "+treeDays+" tree-days<sup>*</sup> worth of CO<sub>2</sub>!</h3>";
 }
 
 calculateAll()
+
+function resetCalc() {
+    setTimeout(() => calculateAll(), 50);
+}
