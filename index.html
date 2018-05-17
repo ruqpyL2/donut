@@ -14,21 +14,20 @@
 <div class="col"><h1>You donut have to travel very far to be green!</h1></div>
 </div>
 
- <div class="row">
+ <div class="row justify-content-center">
  <div class="col-md-9 align-self-end"><h4>How much CO<sub>2</sub> can you save and how many donuts can you eat if you walk or bike on your next short trip? Find out here!</h4></div>
- <div class="col-md-3 align-self-end d-flex justify-content-center"><img src="donut.gif" align="right"></div>
+ <div class="col-md-3 align-self-end justify-content-center"><img src="donut.gif" alt="a donut"></div>
  </div>
 <div id="maincalc">
   <div class="row">
   <div class="col-md">
-  <form action="" id="donutCalcForm">
+  <form id="donutCalcForm" onreset="resetCalc();">
   <div><label for="userDistance">Your round trip mileage:</label>
-       <input type="text" id="userDistance" name="userDistance" size="4" value="1" onChange="calculateAll();"></input></div>
+       <input type="text" id="userDistance" name="userDistance" size="4" value="1"></div>
   <div><label for="userWeight">Your weight (lbs):</label>
-       <input type="text" id="userWeight" name="userWeight" value="150" maxlength="4" size="4" onChange="calculateAll();"></input></div>
-  
+       <input type="text" id="userWeight" name="userWeight" value="150" maxlength="4" size="4"> <em>(used to calculate your calorie burn rate)</em></div>
   <div><label for="travelMode">Your mode of travel:</label>
-  <select id="travelMode" name="travelMode" onChange="calculateAll()">
+  <select id="travelMode" name="travelMode">
   <optgroup label="On Foot">
   <option selected value="walkMod">Walking, moderate pace (3 mph)</option>
   <option value="walkBrisk">Walking, brisk pace (4 mph)</option>
@@ -37,14 +36,15 @@
   <optgroup label="On Wheels">
   <option value="bikeLeisure">Biking, leisurely pace (&lt;10 mph)</option>
   <option value="bikeMod">Biking, moderate pace (13 mph)</option>
+  <option value="bikeFast">Biking, fast pace (15 mph)</option>  
   <option value="unicycle">Unicycling</option>
   <option value="skateboard">Skateboarding</option>
   <option value="skating">In-line skating</option>
   </optgroup>
   </select></div>
   <div><label for="userFuel">Fuel efficiency of your car (mpg):</label>
-       <input type="text" id="userFuel" name="userFuel" value="25" maxlength="2" size="2" onChange="calculateAll()"></input></div>
-  <div><button type="reset" value="Reset" onClick="resetCalc();">Reset values</button></div></form>
+       <input type="text" id="userFuel" name="userFuel" value="25" maxlength="2" size="2"></div>
+  <div><button type="button" value="button" onClick="calculateAll();">Calculate</button> <button type="reset" value="Reset">Reset to defaults</button></div></form>
   </div>
   </div>
   <div id="results">
@@ -60,9 +60,7 @@
 </div>
 </div>
 </div>
-</div>
   </div>
-
 <div id="footer">
 <div class="row">
 <div class="col-md text-center">
@@ -70,18 +68,12 @@
 <h4><a href="../">Find out more</a>.</h4>
 </div>
 </div>
-        <div class="row"><div class="col-md text-center">
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <a href="../">
-                <img src="../img/csc_logos/logo_small.jpg" />
-              </a>
-            </li>
-            <li class="list-inline-item" style="font-size:0.8rem">A project of the 
-            <a href="../">Pasadena Complete Streets Coalition</a></li>
-            <li class="list-inline-item" style="font-size:0.8rem"> Last updated: April 29, 2018</li>
-          <li style="font-size:0.8rem"><a href="https://commons.wikimedia.org/wiki/File:Twemoji_1f369.svg">Donut emoji</a> by <a href="https://www.twitter.com">Twitter</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY 4.0</a></li></ul>
-        </div></div>
+        <div class="row" style="padding-top:40px;"><div class="col-md text-center">
+            <p class="footnote">A project of the 
+            <a href="../">Pasadena Complete Streets Coalition</a>. Last updated: May 16, 2018.</p>
+        <p class="footnote"><a href="https://commons.wikimedia.org/wiki/File:Twemoji_1f369.svg">Donut emoji</a> by <a href="https://www.twitter.com">Twitter</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY 4.0</a></p>
+            <p><a href="../"><img src="../img/csc_logos/logo_small.jpg" /></a></p>
+            </div></div>
  </div>
         </body>
             <!-- JavaScript -->

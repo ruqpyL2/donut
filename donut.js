@@ -6,6 +6,7 @@ transportationMode["walkBrisk"]=[5,4,"walking"];
 transportationMode["run"]=[8.3,5,"running"];
 transportationMode["bikeLeisure"]=[8,9,"riding a bike"];
 transportationMode["bikeMod"]=[5.8,13,"riding a bike"];
+transportationMode["bikeFast"]=[10,15,"riding a bike"];
 transportationMode["unicycle"]=[5,7,"unicycling"]; 
 transportationMode["skateboard"]=[5,9,"skating"]; 
 transportationMode["skating"]=[7.5,9,"skating"];
@@ -43,9 +44,8 @@ function calculateAll() {
 	document.getElementById("calcResults").innerHTML = 
     "<p>By "+transData[2]+"  for "+Math.round(transitTime/2)+" minutes each way on your next trip:</p><h3>You can eat "+donuts+" donuts and save "+treeDays+" tree-days<sup>*</sup> worth of CO<sub>2</sub>!</h3>";
 }
+function resetCalc() {
+    setTimeout(function(){ calculateAll(); }, 50);
+}
 
 calculateAll()
-
-function resetCalc() {
-    setTimeout(() => calculateAll(), 50);
-}
