@@ -1,6 +1,7 @@
 
 body {
   font-family: 'Corbel', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
   color: #454545;
   margin: 40px auto;
   max-width: 650px;  
@@ -32,11 +33,11 @@ h1 {
     font-weight:600;
 }
 h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
 } 
 h3 {
-    font-size: 1.7rem;
+    font-size: 2rem;
     font-weight: 600;
 }  
 h4 {
@@ -88,10 +89,6 @@ li {
 
 button {
     margin-top:0.5rem;
-}
-
-ul, li{
-    style:inline;
 }
 
 .list-inline {
@@ -149,14 +146,9 @@ col-md-9, col-md-3 {
       align-self: flex-end !important;
 }
 
-.d-flex {
-  display: -ms-flexbox !important;
-  display: flex !important;
-}
-
 .justify-content-center {
   -ms-flex-pack: center !important;
-      justify-content: center !important;
+  justify-content: center !important;
 }
 
 .justify-content-between {
