@@ -30,7 +30,7 @@ body {
 }
 
 #titleHeader, #tagline, #inputArea, #resultArea, #invitation, #footer {
-    margin: 1rem auto;
+    margin: 1rem 15px;
     display: flex;
     justify-content: center;
     }  
@@ -83,7 +83,7 @@ p, label {
     margin-bottom: 0.5rem;
     }
 
-input[type=text] {
+input[type=text],select {
     width:100%;
 }
 
