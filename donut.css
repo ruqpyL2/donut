@@ -29,8 +29,9 @@ body {
 }  
 }
 
-#titleHeader, #tagline, #inputArea, #resultArea, #invitation, #footer {
-    margin: 1rem 15px;
+#titleHeader, #tagline, #inputArea, #resultArea, #invitation {
+    margin: 1rem auto;
+    padding: 0 15px;
     display: flex;
     justify-content: center;
     }  
