@@ -1,89 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Pasadena CSC DonutTree Calculator for Earth Day 2018" />
-    <meta name="author" content="Pasadena Complete Streets Coalition https://www.pasadenacsc.org" />
-    <title>DonutTree Calculator - PasCSC</title>
-    <!-- CSS and custom fonts-->
-    <link href="donut.css" rel="stylesheet" />
-  </head>
-  <body>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Pasadena CSC DonutTree Kaleculator" />
+<meta name="author" content="Pasadena Complete Streets Coalition https://www.pasadenacsc.org" />
+<title>DonutTree Kaleculator - Pasadena CSC</title>
+<!-- CSS and custom fonts-->
+<link href="main.css" rel="stylesheet" /> 
+<link href="donut.css" rel="stylesheet" />    
+<!-- Google Analytics tracking: Global Site Tag (gtag.js)  -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-81732179-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-81732179-1');
+</script>
+</head>
+<body>
+<div id="mainBody">
+
+<div id="titleHeader">
 <div class="row">
-<div class="col"><h1>You donut have to travel very far to be green!</h1></div>
+    <div class="col text-center"><h1>DONUT worry:</h1><h2>It's easy to move healthy (and green)!</h2></div>
+</div>
+</div>  
+
+<div id="tagline">
+<div class="row">
+    <div class="col"><p><em>How much will you benefit when you walk, bike, or roll your next short trip? Find out here!</em></p></div>
+</div>
+</div> 
+
+<div id="inputArea">
+<div class="row">
+    <div class="col">
+    <form id="donutCalcForm" onreset="resetCalc();">
+        <div class="formRow"><label for="userDistance">Your round trip mileage:</label><br>
+        <input type="text" id="userDistance" name="userDistance" size="max-width" value="1"></div>
+        <div class="formRow"><label for="userWeight">Your weight (lbs) <em>(optional, used to calculate calories)</em>: </label><br>
+        <input type="text" id="userWeight" name="userWeight" value="150" maxlength="4" size="max-width"><br></div>
+        <div class="formRow"><label for="travelMode">Your mode of travel: </label><br>
+            <select id="travelMode" name="travelMode">
+            <optgroup label="On Foot">
+                <option selected value="walkMod">Walking, moderate pace (3 mph)</option>
+                <option value="walkBrisk">Walking, brisk pace (4 mph)</option>
+                <option value="run">Running (12 min mile)</option>
+            </optgroup>
+            <optgroup label="On Wheels">
+                <option value="bikeLeisure">Biking, leisurely pace (&lt;10 mph)</option>
+                <option value="bikeMod">Biking, moderate pace (13 mph)</option>
+                <option value="bikeFast">Biking, fast pace (15 mph)</option>  
+                <option value="unicycle">Unicycling</option>
+                <option value="skateboard">Skateboarding</option>
+                <option value="skating">In-line skating</option>
+            </optgroup>
+            <optgroup label="Wheelchairs and Strollers">
+                <option value="wheelchairMod">Pushing your own wheelchair, moderate pace (2 mph)</option>
+                <option value="wheelchairBrisk">Pushing your own wheelchair, brisk pace (4 mph)</option>
+                <option value="wheelchairPushMod">Pushing a wheelchair or stroller, moderate pace (2 mph)</option>
+                <option value="wheelchairPushBrisk">Pushing a wheelchair or stroller, brisk pace (4 mph)</option>
+            </optgroup>
+            </select></div>
+        <div class="formRow"><label for="userFuel">Fuel efficiency of your car (mpg):</label><br>
+        <input type="text" id="userFuel" name="userFuel" value="25" maxlength="2"></div>
+<div class="row">
+    <div class="col text-center"><p>Donut Mode <label class="switch"><input type="checkbox" id="donutsOrKale" onClick="switchFood(document.getElementsByTagName('button'));"><span class="slider round"></span></label> Kale Mode</p></div>
+</div>
+        <div class="text-center"><button type="button" class="btn" value="button" onClick="calculateAll();">Calculate</button><button type="reset" class="btn" value="Reset">Reset to default</button></div>
+    </form>
+    </div>
+</div>
 </div>
 
- <div class="row">
- <div class="col-md-9 align-self-end"><h4>How much CO<sub>2</sub> can you save and how many donuts can you eat if you walk or bike on your next short trip? Find out here!</h4></div>
- <div class="col-md-3 align-self-end d-flex justify-content-center"><img src="donut.gif" align="right"></div>
- </div>
-<div id="maincalc">
-  <div class="row">
-  <div class="col-md">
-  <form action="" id="donutCalcForm">
-  <div><label for="userDistance">Your round trip mileage:</label>
-       <input type="text" id="userDistance" name="userDistance" size="4" value="1" onChange="calculateAll();"></input></div>
-  <div><label for="userWeight">Your weight (lbs):</label>
-       <input type="text" id="userWeight" name="userWeight" value="150" maxlength="4" size="4" onChange="calculateAll();"></input></div>
-  
-  <div><label for="travelMode">Your mode of travel:</label>
-  <select id="travelMode" name="travelMode" onChange="calculateAll()">
-  <optgroup label="On Foot">
-  <option selected value="walkMod">Walking, moderate pace (3 mph)</option>
-  <option value="walkBrisk">Walking, brisk pace (4 mph)</option>
-  <option value="run">Running (12 min mile)</option>
-  </optgroup>
-  <optgroup label="On Wheels">
-  <option value="bikeLeisure">Biking, leisurely pace (&lt;10 mph)</option>
-  <option value="bikeMod">Biking, moderate pace (13 mph)</option>
-  <option value="unicycle">Unicycling</option>
-  <option value="skateboard">Skateboarding</option>
-  <option value="skating">In-line skating</option>
-  </optgroup>
-  </select></div>
-  <div><label for="userFuel">Fuel efficiency of your car (mpg):</label>
-       <input type="text" id="userFuel" name="userFuel" value="25" maxlength="2" size="2" onChange="calculateAll()"></input></div>
-  <div><button type="reset" value="Reset" onClick="resetCalc();">Reset values</button></div></form>
-  </div>
-  </div>
-  <div id="results">
-<div class="row">
-<div class="col-md">
-<div id="calcResults"></div>
+<div id="resultHeader">
+    <div class="row">
+        <div class="col text-center" id="calcResults"></div>
+    </div>
 </div>
-</div>
-<div class="row">
-<div class="col-md">
-<p class="footnote">* Tree-day = amount of CO<sub>2</sub> absorbed by a mature tree in one day</p>
-<p>Curious about these <a href="faq.html">numbers?</a></p>
-</div>
-</div>
-</div>
-</div>
-  </div>
+<div id="resultArea">    
+    <div class="row">
+        <div class="resultCard col-sm" id="numberDonutOrKale">
+        <div class="resultEmph" id="calcFoodNo"></div>
+        <div id="foodEmoji"></div>
+        <div class="resultText" id="calcFoodFlavorText"></div>
+        </div>
+        <div class="resultCard col-sm" id="numberTreeDays">
+        <div class="resultEmph" id="calcTreesNo"></div>
+        <div><img src="img/tree.png" alt="tree emoji" height="80px"/></div>
+        <div class="resultText" id="calcTreesFlavorText"></div>
+        </div>
 
-<div id="footer">
-<div class="row">
-<div class="col-md text-center">
-<h4>Do you wish that you could walk or bike more often, but you're concerned about safety?</h4> <h2>We get it.</h2> <h4>That's why we work: we want Pasadena's streets to be as safe as possible for everyone, including <strong>you</strong>!</h4> 
-<h4><a href="../">Find out more</a>.</h4>
+        <div class="resultCard col-sm" id="numberExercise">
+        <div class="resultEmph" id="calcExerciseNo"></div>
+        <div><img src="img/handsup.png" alt="hi5 emoji" height="80px"/></div>
+        <div class="resultText" id="calcExerciseFlavorText"></div>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="row">
+        <div class="col text-center"><h2>Go, you!</h2>    
+        <p class="footnote">Curious about these <a href="faq.html">numbers?</a></p></div>
+    </div>
+</div>
+<div id="invitation">
+    <div class="row">
+    <div class="col-md text-center"><P>Do you wish that you could walk or bike more often, but you're concerned about safety?</P> <h2>We get it.</h2> <P>That's why we're working to make Pasadena's streets safe and accessible for everyone, including <strong>you</strong>!</P> 
+    <h4><a href="../">Find out more</a>.</h4></div>
+    </div>
+</div>    
+</div>
+
+<!--Footer area-->    
+<div id="footer" class="container-fluid bg-warning py-3">
+<div class="text-center">
+    <p class="footer"><a href="../"><img src="../img/csc_logos/logo_small.jpg" /></a> A project of the <a href="../">Pasadena Complete Streets Coalition</a>. Last updated: April 19, 2019.</p>
+<p class="footer"><a href="https://commons.wikimedia.org/wiki/File:Twemoji_1f369.svg">Emojis</a> by <a href="https://www.twitter.com">Twitter</a> are licensed under <a href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY 4.0</a></p>
 </div>
 </div>
-        <div class="row"><div class="col-md text-center">
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <a href="../">
-                <img src="../img/csc_logos/logo_small.jpg" />
-              </a>
-            </li>
-            <li class="list-inline-item" style="font-size:0.8rem">A project of the 
-            <a href="../">Pasadena Complete Streets Coalition</a></li>
-            <li class="list-inline-item" style="font-size:0.8rem"> Last updated: April 29, 2018</li>
-          <li style="font-size:0.8rem"><a href="https://commons.wikimedia.org/wiki/File:Twemoji_1f369.svg">Donut emoji</a> by <a href="https://www.twitter.com">Twitter</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY 4.0</a></li></ul>
-        </div></div>
- </div>
-        </body>
-            <!-- JavaScript -->
-  <script src="donut.js"></script> 
+
+</body>
+        <!-- JavaScript -->
+<script src="donut.js"></script> 
 </html>
