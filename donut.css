@@ -30,8 +30,8 @@ body {
 }
 
 #titleHeader, #tagline, #inputArea, #resultArea, #invitation {
-    margin: 1rem auto;
-    padding: 0 15px;
+    margin: auto;
+    padding: 1rem 15px;
     display: flex;
     justify-content: center;
     }  
