@@ -90,7 +90,7 @@ function calculateAll() {
 
 }
 function resetCalc() {
-    setTimeout(function(){ calculateAll(); }, 50);
+    setTimeout(function(){ calculateAll(); switchFood(document.getElementsByTagName('button'));}, 50);
 }
 
 

@@ -11,30 +11,39 @@ body {
 
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {/*small screens*/
  #mainBody {
     background-color:rgba(255,255,255,0.9);
     margin: 15px auto;
     width: 100%;
     padding: 15px;
 }
+#titleHeader, #tagline, #inputArea, #resultArea, #invitation {
+    margin: auto;
+    padding: 1rem 0;
+    max-width: 95%;
+    }  
 }
 
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 600px){/*desktop*/
 #mainBody {
     background-color:rgba(255,255,255,0.9);
     margin: 50px auto;
     width: 75%;
     padding: 15px;
 }  
+#titleHeader, #tagline, #resultArea, #invitation {
+    margin: auto;
+    padding: 1rem 0;
+    max-width: 80%;
+    }  
+#inputArea {
+    margin: auto;
+    padding: 1rem 0;
+    max-width: 50%;
+    }      
 }
 
-#titleHeader, #tagline, #inputArea, #resultArea, #invitation {
-    margin: auto;
-    padding: 1rem 15px;
-    display: flex;
-    justify-content: center;
-    }  
     
 .formRow {
     margin:1.5rem 0rem;
