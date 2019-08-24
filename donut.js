@@ -65,7 +65,7 @@ function calculateAll() {
     var treeDays = ((inputDistance * 18.9) / (fuelEff * 0.13)).toFixed(1);
   // Write to page
 	document.getElementById("calcResults").innerHTML = 
-    "<h2>By "+transData[3]+" for "+transitTime+" minutes each way, you'll earn:</h2>";
+    "<h2>By "+transData[3]+" for "+transitTime/2+" minutes each way, you'll earn:</h2>";
   // Output donuts or kale depending on what's checked
   var checkBox = document.getElementById("donutsOrKale");
   if (checkBox.checked == true){
