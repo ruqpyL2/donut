@@ -122,11 +122,11 @@ function calcAndWriteToPage(input) {
     document.getElementById('calcExerciseNo').innerHTML = userOutput.exercisePercent+'%';
     document.getElementById('calcExerciseFlavorText').innerHTML = 
     'your exercise RDA*!<p class=\"footnote\">*recommended daily allowance</p>';
-    document.getElementById('calcCollectiveTreesResult').innerHTML = 'It would be as powerful as planting <strong>'+userOutput.treesPerHousehold.toFixed(0)+' trees</strong> in front of every family\'s home!';
+    document.getElementById('calcCollectiveTreesResult').innerHTML = 'It would be as powerful as planting <strong>'+userOutput.treesPerHousehold.toFixed(0)+' trees</strong> in front of every house and apartment!';
     document.getElementById('forestResult').innerHTML = '<img src=\"img/tree.png\" alt=\"tree emoji\" height=\"30px\"/>'.repeat(userOutput.treesPerHousehold.toFixed(0));
-    document.getElementById('calcCollectivePMResult').innerHTML = 'We would also avoid <strong>'+userOutput.lbsPMperDay.toFixed(0)+' lbs</strong> of toxic dust everyday.'
+    document.getElementById('calcCollectivePMResult').innerHTML = 'We would also avoid creating <strong>'+userOutput.lbsPMperDay.toFixed(0)+' lbs</strong> of air pollution particles every day.'
     document.getElementById('PMResult').innerHTML = '<img src=\"img/facemask.png\" alt=\"medical mask emoji\" height=\"30px\"/>'.repeat(userOutput.lbsPMperDay.toFixed(0));
-    document.getElementById('calcCollectivePMFlavorText').innerHTML = '<p>If we kept going for <strong>'+userOutput.PMofYouinDays+' days</strong>, the toxic dust avoided would weigh as much as you do!</p>';
+    document.getElementById('calcCollectivePMFlavorText').innerHTML = '<p>If we did this <strong>'+userOutput.PMofYouinDays+' days</strong> in a row, the particles avoided would <strong>weigh as much as you do!</strong></p>';
     return userOutput;
 }
 
