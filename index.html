@@ -40,10 +40,15 @@ gtag('config', 'UA-81732179-1');
     <div class="col">
     <form id="donutCalcForm" onreset="resetCalc();">
         <div class="formRow"><label for="userDistance">Your round trip mileage:</label><br>
-        <input type="text" id="userDistance" name="userDistance" size="max-width" value="1"></div>
+        <input type="text" id="userDistance" name="userDistance" size="max-width" value="1">
+        <p id="userDistanceAlert" class="error">Please enter a distance greater than 0.</p></div>
         <div class="formRow"><label for="userWeight">Your weight (lbs) <em>(optional, used to calculate calories)</em>: </label><br>
-        <input type="text" id="userWeight" name="userWeight" value="150" maxlength="4" size="max-width"><br></div>
-        <div class="formRow"><label for="travelMode">Your mode of travel: </label><br>
+        <input type="text" id="userWeight" name="userWeight" value="150" maxlength="4" size="max-width">
+        <p id="userWeightAlert" class="error">Please enter a weight greater than 0.</p></div>
+        <div class="formRow"><label for="userFuel">Fuel efficiency of your car (mpg):</label><br>
+        <input type="text" id="userFuel" name="userFuel" value="25" maxlength="2">
+        <p id="userFuelAlert" class="error">Please enter a fuel efficiency greater than 0.</p></div>
+        <div class="formRow mb-3"><label for="travelMode">How you'll get there: </label><br>
             <select id="travelMode" name="travelMode">
             <optgroup label="On Foot">
                 <option selected value="walkMod">Walking, moderate pace (3 mph)</option>
@@ -65,9 +70,7 @@ gtag('config', 'UA-81732179-1');
                 <option value="wheelchairPushBrisk">Pushing a wheelchair or stroller, brisk pace (4 mph)</option>
             </optgroup>
             </select></div>
-        <div class="formRow"><label for="userFuel">Fuel efficiency of your car (mpg):</label><br>
-        <input type="text" id="userFuel" name="userFuel" value="25" maxlength="2"></div>
-<div class="row">
+<div class="row mt-3">
     <div class="col text-center"><p>Donut Mode <label class="switch"><input type="checkbox" id="donutsOrKale" onClick="switchFood(document.getElementsByTagName('button'));"><span class="slider round"></span></label> Kale Mode</p></div>
 </div>
         <div class="text-center"><button type="button" class="btn" value="button" onClick="calculateAll();">Calculate</button><button type="reset" class="btn" value="Reset">Reset to default</button></div>
@@ -101,15 +104,44 @@ gtag('config', 'UA-81732179-1');
         </div>
     </div>
 </div>
-<div>
+<div id="collectiveAction" class="text-center">
+        <h2>Wow, you're awesome!</h2>
+        <p class="lead">If just 1 out of 10 people in Pasadena acted like you every day...</p>
+        <div class="resultCard" id="collectiveTrees">
+        <div class="resultText" id="calcCollectiveTreesResult"></div>
+        <div id="forestResult" class="my-3"></div>
+        <p>Did you know? More than <strong>1 out of 5</strong> car trips in Los Angeles every day are <strong>less than 1 mile</strong>.<br>
+        Almost <strong>2 out of 5</strong> car trips are <strong>less than 2 miles</strong>! (<a href="http://inrix.com/press-releases/micromobility-study-us-2019/"><em>Source</em></a>)</p>
+        </div>
+        <div class="resultCard" id="collectivePM">
+        <div class="resultText" id="calcCollectivePMResult"></div>
+        <div id="PMResult" class="my-3"></div>
+        <div id="calcCollectivePMFlavorText"></div>
+        </div>
+        <h2>Amazing!</h2>
+        <p>Curious about these numbers? <a href="faq.html">Check out our sources.</a></p>
+</div>
+
+<!---Not ready yet
+<div id="sendResults">
     <div class="row">
-        <div class="col text-center"><h2>Go, you!</h2>
-        <p class="footnote">Curious about these <a href="faq.html">numbers?</a></p></div>
+        <div class="col">
+        <h1 class="text-center"><strong>Want a copy of your results?</strong></h1>
+        <form id="sendResultsForm" class="validate" action="sendResults();">
+        <div class="formRow"><label for="userEmail">Your e-mail:</label><br>
+        <input type="text" id="userEmail" name="userEmail" size="max-width" placeholder="name@example.com" required></div>
+        <div class="formRow"><label for="userDestination">Describe your trip (optional):</label><br>
+        <input type="text" id="userDestination" name="userDestination" size="max-width" placeholder="from home to the store..."></div>
+        <div class="text-center" id="userEmailAlert"></div>
+        <div class="text-center"><button type="button" class="btn" value="button" onClick="sendResults();">Send!</button><button type="reset" class="btn" value="Reset" onClick="clearEmail();">Clear</button></div>
+    </form>  
+        </div>
     </div>
 </div>
+--->
 <div id="invitation">
     <div class="row">
-    <div class="col-md text-center"><P>Do you wish that you could walk or bike more often, but you're concerned about safety?</P> <h2>We get it.</h2> <P>That's why we're working to make Pasadena's streets safe and accessible for everyone, including <strong>you</strong>!</P> 
+    <div class="col-md text-center"><P>Do you wish that you could walk or bike more often, but you're concerned about safety?<p> <P><strong>We get it.</strong> That's why we're working to make Pasadena's streets safer and more accessible for everyone, <strong>including you</strong>!</P> 
     <h4><a href="../">Find out more</a>.</h4></div>
     </div>
 </div>    
@@ -118,7 +150,7 @@ gtag('config', 'UA-81732179-1');
 <!--Footer area-->    
 <div id="footer" class=" container-fluid bg-warning py-3">
 <div class="text-center">
-    <p class="footer"><a href="../"><img src="../img/csc_logos/logo_small.jpg" /></a> A project of the <a href="../">Pasadena Complete Streets Coalition</a>. Last updated: April 19, 2019.</p>
+    <p class="footer"><a href="../"><img src="../img/csc_logos/logo_small.jpg" /></a> A project of the <a href="../">Pasadena Complete Streets Coalition</a>. Last updated: October 4, 2019.</p>
 <p class="footer"><a href="https://commons.wikimedia.org/wiki/File:Twemoji_1f369.svg">Emojis</a> by <a href="https://www.twitter.com">Twitter</a> are licensed under <a href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY 4.0</a></p>
 </div>
 </div>

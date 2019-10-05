@@ -18,11 +18,17 @@ body {
     width: 100%;
     padding: 15px;
 }
-#titleHeader, #tagline, #inputArea, #resultArea, #invitation {
+#titleHeader, #tagline, #inputArea, #resultArea, #collectiveAction, #invitation {
     margin: auto;
-    margin: 0.5rem 0;
+    padding: 0.5rem 0;
     max-width: 95%;
     }  
+#sendResults {
+    margin: auto;
+    padding: 1rem;
+    max-width: 95%;
+    background-color:#f5f6de;
+    } 
 }
 
 @media only screen and (min-width: 600px){/*desktop*/
@@ -32,9 +38,9 @@ body {
     width: 75%;
     padding: 15px;
 }  
-#titleHeader, #tagline, #resultArea, #invitation {
+#titleHeader, #tagline, #resultArea, #collectiveAction, #invitation {
     margin: auto;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     max-width: 80%;
     }  
 #inputArea {
@@ -42,16 +48,23 @@ body {
     padding: 1rem 0;
     max-width: 50%;
     }      
+#sendResults {
+    margin: auto;
+    padding: 1rem;
+    max-width: 50%;
+    background-color:#f5f6de;
+    }   
 }
+  
 
     
 .formRow {
-    margin:1.5rem 0rem;
+    margin:0.2rem 0rem;
 }
     
 .resultCard {
     background-color:#f5f6de;
-    margin:0rem 1rem;
+    margin:1rem;
     text-align:center;
     padding:0.25rem;
 }
@@ -78,20 +91,7 @@ a:hover {
   text-decoration: underline;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
-    font-family: inherit;    
-    color: inherit;
-}
-    
-p, label {
-    font-size: 1.2rem;
-    line-height:1.6rem;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    }
+
 
 input[type=text],select {
     width:100%;
@@ -99,7 +99,9 @@ input[type=text],select {
 
 p.error {
     color:#ff8800;
-}
+    font-size:0.8rem;
+    margin-bottom:0.2rem;
+    }
 
 p.footnote {
     font-size:0.8rem; 
