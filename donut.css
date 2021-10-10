@@ -9,7 +9,50 @@ body {
     background-repeat:repeat;
 }
 
+h1, .h1 {
+  font-size: 2rem; }
 
+h2, .h2 {
+  font-size: 1.5rem; }
+
+.btn {
+  white-space: normal !important;
+  word-wrap: break-word;
+  word-break: normal; }
+  
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+font-family: 'Poppins', sans-serif;
+padding-bottom: 1rem;
+padding-top: 1.5rem; }
+
+p, .p, .btn, li, .li, ol, .ol, label {
+font-family: 'Lato', serif;
+font-size: 1em; }
+
+.lead {
+font-size: 1.4em; }
+
+.footer {
+font-size: 1em;
+margin: 0; }
+
+a, .a {
+color: #1782ae; }
+
+i {
+margin-right: 0.25em;
+margin-left: 0.25em; }
+
+p + p {
+margin-top: 0.5em; }
+
+.error {
+border-color: red; }
+
+.error-message {
+color: red;
+font-style: italic;
+margin-bottom: 1em; }
 
 @media only screen and (max-width: 600px) {/*small screens*/
  #mainBody {
@@ -20,7 +63,7 @@ body {
 }
 #titleHeader, #tagline, #inputArea, #resultArea, #collectiveAction, #invitation {
     margin: auto;
-    padding: 0.5rem 0;
+    padding: 1rem 0;
     max-width: 95%;
     }  
 #sendResults {
@@ -36,11 +79,11 @@ body {
     background-color:rgba(255,255,255,0.9);
     margin: 50px auto;
     width: 75%;
-    padding: 15px;
+    padding: 50px 15px;
 }  
 #titleHeader, #tagline, #resultArea, #collectiveAction, #invitation {
     margin: auto;
-    padding: 0.5rem 0;
+    padding: 1rem 0;
     max-width: 80%;
     }  
 #inputArea {
@@ -66,7 +109,7 @@ body {
     background-color:#f5f6de;
     margin:1rem;
     text-align:center;
-    padding:0.25rem;
+    padding:1rem;
 }
 
 .resultEmph{

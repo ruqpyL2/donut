@@ -7,25 +7,29 @@
     <meta name="author" content="Pasadena Complete Streets Coalition https://www.pasadenacsc.org" />
     <title>DonutTree Kaleculator - Frequently Asked Questions</title>
     <!-- CSS and custom fonts-->
-    <link href="../css/main.css" rel="stylesheet" />
+    <link href="main.css" rel="stylesheet" />
     <link href="donut.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Oswald|Montserrat" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@500&display=swap" rel="stylesheet">  
     </head>
   <body>
-<div class="container" style="background:rgba(255,255,255,0.9)">
+<div class="container" id="mainBody" style="background:rgba(255,255,255,0.9)">
 <div class="row">
-<div class="col 3 my-3"><h1>DonutTree Kaleculator - Frequently Asked Questions</h1></div>
+<div class="col 3 my-3 text-center"><h1>DonutTree Kaleculator - Frequently Asked Questions</h1></div>
 </div>
 <div class="row">
 <div class="col">
 <ul>
-<li><h2>What is this, and why?</h2>
-<p>DonutTree Kaleculator is a project we put together for Earth Day 2018 (updated for Earth Day 2019 and Clean Air Fair 2019). We hear all the time that being more active is good for your health and the environment, and we wanted to get a better idea of just "how good" it can be.</p>
-<p>Sometimes, "how good" is a number we can't see or touch. It's hard to understand what that number means, and hard to get excited about it. (You can't hold a pound of CO<sub>2</sub>, which makes it hard to get excited about reducing your carbon footprint.) We thought it'd be helpful and interesting to learn to say "how good" in a way that's easy to understand.</p>
-<p>We think it's really cool that you don't have to be extreme -- using the <A href="./index.html">kaleculator</a>, you can see that replacing just one short drive with a walk or a ride has real benefits, which add up over time!</p> 
+
+<li><h2>What is this?</h2>
+<p>We hear all the time that being more active is good for your health and the environment, but it's often hard to understand what "good" actually means. It's hard to get excited about numbers you can't see or touch. (For example, because you can't hold a pound of CO<sub>2</sub>, it's hard to get excited about reducing your carbon footprint.)</p>
+<p>We thought it'd be fun and helpful to learn to say "how good" in a way that's easy to grasp. So we made DonutTree Kaleculator for Earth Day 2018. </p>
+<p>We think it's really cool that you don't have to be extreme -- using the <a href="./index.html">kaleculator</a>, you can see that replacing just one short drive with a walk or a ride has real benefits, which add up over time!</p> 
 <p>We also think there's something magical about taking a walk or ride before eating a donut.</p></li>
+
 <li><h2>Where did you get these numbers?</h2>
-<p>Here's a list of our sources and assumptions. Keep in mind that these calculations are estimates - they're meant to give you a general (and fun!) idea of what active transportation can do for you.
+<p>Here's a list of our sources and assumptions. Keep in mind that these calculations are estimates - they're meant to give you a general (and fun!) idea of what active transportation can do for you.</p>
 <ul><li>Calorie burn rates were calculated using MET values for various activities (<a href="https://captaincalculator.com/health/calorie/calories-burned-walking-calculator/">Captain Calculator</a>)</li>
 <li>The calorie burn rates assume that you're walking on level ground. They'll be higher if you're going uphill, and lower if you're going downhill. If you're making a round trip, we assume it averages out, but this may not be accurate.  Particularly if your trip is uphill both ways.</li>
 <li>A medium-sized donut is about 250 kcal (<a href="https://www.nutritionix.com/">Nutritionix</a>)</li>
@@ -33,10 +37,10 @@
 <li>"A single mature tree can absorb carbon dioxide at a rate of 48 lbs/year and release enough oxygen back into the atmosphere to support 2 human beings." (McAliney, Mike. Arguments for Land Conservation: Documentation and Information Sources for Land Resources Protection, Trust for Public Land, Sacramento, CA, December, 1993, as quoted by <a href="https://www.jointreeforall.org/benefits">Tree for All</a>)</li>
 <li>The US Department of Health and Human Services released <a href="https://www.hhs.gov/fitness/be-active/physical-activity-guidelines-for-americans/index.html">updated physical activity guidelines</a> in 2018. Key takeaways: Adults should do at least 150 minutes a week of moderate-intensity, or 75 minutes a week of vigorous-intensity aerobic physical activity. We've divided this by 7 days because "aerobic activity should be spread throughout the week" (and because it's snappier to say "RDA").</li>
 <li>We calculated the community impact using the following numbers. <a href="https://www.cityofpasadena.net/commissions/wp-content/uploads/sites/31/2019-08-07-Hearing-Officer-Staff-Report-AHCP11870-Addendum_July-2019_Appendix-D_Traffic-Study.pdf">A traffic study by the City of Pasadena</a> shows that the average number of vehicle trips per day (VT) in 2013 was 686,619. (This appears to be the most recent available data). We then multiply your tree result by 10% of those trips (68,662 per day) to get collective tree days. This is a ridiculously large number, so we human-scaled it by dividing the trees by the number of households or families in Pasadena, according to the <a href="https://datausa.io/profile/geo/pasadena-ca/">Census Bureau</a>. </li>
-<li>"Toxic dust" is our simple way of referring to particulate matter (PM) - the black carbon dust that settles on your patio and <a href="https://www.theguardian.com/environment/2019/sep/17/air-pollution-particles-found-on-foetal-side-of-placentas-study">makes people sick</a>. The amount of PM2.5 and PM10 emissions per mile for different travel modes were calculated by two scientists named Chester and Horvath (2012), available for free on <a href="http://www.transportationlca.org/tlcadb-passenger.php">their website</a>. We used the mg per mile values for the "35 mpg Sedan(1)", because the data is given per person (you'll notice that if you have a full load of 5 people, your impact per person is lower! Carpools rock!). We only calculated with the amount produced during vehicle operation, because the pollution produced during car manufacturing is already in the air and water, no take-backs. And, the numbers for the 35 and 55 mpg Sedan(1)s were similar enough that we decided it was OK to use the same pollution number, no matter the fuel efficiency of your car. Remember, we're estimating here.</li>
-</ul></p>
+<li>"Air pollution particles" is our simple way of referring to particulate matter (PM) - the black carbon dust that settles on your patio and <a href="https://www.theguardian.com/environment/2019/sep/17/air-pollution-particles-found-on-foetal-side-of-placentas-study">makes people sick</a>. The amount of PM2.5 and PM10 emissions per mile for different travel modes were calculated by two scientists named Chester and Horvath (2012), available for free on <a href="http://www.transportationlca.org/tlcadb-passenger.php">their website</a>. We used the mg per mile values for the "35 mpg Sedan(1)", because the data is given per person (you'll notice that if you have a full load of 5 people, your impact per person is lower! Carpools rock!). We only calculated with the amount produced during vehicle operation, because the pollution produced during car manufacturing is already in the air and water, no take-backs. And, the numbers for the 35 and 55 mpg Sedan(1)s were similar enough that we decided it was OK to use the same pollution number, no matter the fuel efficiency of your car. Remember, we're estimating here.</li>
+</ul>
 </li>
-<li><h2>Are you serious? That much toxic dust?</h2>
+<li><h2>Are you serious? That much pollution?</h2>
 <p>Ugh, I know! We couldn't believe it either, so we cross-checked it against data for the <a href="https://edap.epa.gov/public/extensions/nei_report_2014/dashboard.html#trend-db">national PM2.5 and PM10 emissions</a> and <a href="https://www.ssti.us/wp/wp-content/uploads/2015/03/SSTI_VMT_2014.pdf">national vehicle miles traveled (VMT)</a> in 2014. In fact, the numbers from Chester and Horvath appear to give a low estimate of the damage.</p></li>
 <li><h2>I want to walk or bike more, but it's really hard for me to get anywhere from my home. What can I do?</h2>
 <p>We feel you! Try some of these ideas:
@@ -45,7 +49,7 @@
 <li>Do you have several errands in a small area? Instead of driving between each one, consider parking your car at one location, and walking to some of the others.</li>
 <li>Tired of waiting for an empty parking space? Park a little further away and enjoy the walk.</li>
 </ul></p></li>
-<li><h2>Who are you people?</h2><p>We're the <a href="../">Pasadena Complete Streets Coalition</a> (Pasadena CSC). We're a bunch of folks from Pasadena who got tired of seeing our friends die in traffic crashes. We want Pasadena's streets to be as safe and comfortable as possible, and we're doing everything we can to move our city in that direction.</p>
+<li><h2>Who are you?</h2><p>We're the <a href="../">Pasadena Complete Streets Coalition</a> (Pasadena CSC). We're a bunch of folks from Pasadena who got tired of seeing our friends die in traffic crashes. We want Pasadena's streets to be as safe and comfortable as possible, and we're doing everything we can to move our city in that direction.</p>
 <p>We're all volunteers and we come from a range of backgrounds. But we love working creatively together, and we all think that Complete Streets would make our city a better place.</p></li>
 <li><h2>What are "Complete Streets"?</h2>
 <p>Complete Streets are streets that are designed holistically -- so that people of all ages and abilities have a variety of safe and efficient travel options and the local neighborhood is a comfortable place to live. Some of the guiding principles are:
@@ -56,24 +60,21 @@
 <li><strong>Adapt to local needs</strong> by designing sidewalks, signage, and parking to strengthen local businesses; using shade trees to protect people from heat waves; building affordable homes near stores and transit; and making space for urban gardens and gathering spaces.</li></ol>
 </p>
 </li>
-<li><h2>What kinds of things does Pasadena CSC do?</h2><p><a href="../projects/">Lots of things!</a> And you're welcome to join us.</p></li>
+<li><h2>What kinds of things does Pasadena CSC do?</h2><p><a href="https://www.pasadenacsc.org/current-projects">Lots of things!</a> And you're welcome to join us.</p></li>
 <li><h2>I found a problem with the kaleculator!</h2>
 <p>Oops! Please send your bug report to donuts[at]pasadenacsc[dot]org, and we'll take a look. If you're right, we'll be happy to send you a donut.</p></li>
 </ul>
 </div>
 </div>
-        <div class="text-center"><a class="btn" href="./index.html">Back to the kaleculator</button><a class="btn" href="../">Pasadena CSC Main Page</button></div>
-        <div class="row"><div class="col-md text-center">
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <a href="../">
-                <img src="../img/csc_logos/logo_small.jpg" />
-              </a>
-            </li>
-            <li class="list-inline-item" style="font-size:0.8rem">A project of the 
-            <a href="../">Pasadena Complete Streets Coalition</a></li>
-            <li class="list-inline-item" style="font-size:0.8rem"> Last updated: April 19, 2019</li>
-          </ul>
-        </div></div></div>
-        </body>
+  <div class="row"><div class="col-md text-center">
+    <ul class="list-inline">
+      <li class="list-inline-item">
+        <a href="index.html">Back to the kaleculator</a></li>
+      <li class="list-inline-item"></li>
+      <li>A project of the 
+      <a href="https://www.pasadenacsc.org/">Pasadena Complete Streets Coalition</a></li>
+    </ul>
+  </div>
+</div></div>
+</body>
 </html>

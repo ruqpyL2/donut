@@ -94,9 +94,9 @@ function calcAndWriteToPage(input) {
     //686,619 VT daily in Pasadena in 2013, assume 10% of trips change
     //54.7k households in Pasadena last census
     userOutput.treesPerHousehold = (686619*0.1*userOutput.treeDays)/54700;
-    // PM 2.5+10 is 25mg/mile for a sedan...operation time only, not even a full LCA!
-    // Convert mg to lb = 1/453592.4
-    userOutput.lbsPMperDay = 25*input.Distance*686619*0.1/453592.4;
+    // PM 2.5+10 is 41.9mg/mile for a sedan...operation time only, not even a full LCA!
+    // Convert mg to lb = 1/453592
+    userOutput.lbsPMperDay = 41.9*input.Distance*686619*0.1/453592;
     userOutput.PMofYouinDays = (input.Weight/userOutput.lbsPMperDay).toFixed(0);
     document.getElementById('calcResults').innerHTML = 
     '<h2>By '+userOutput.verb+' for '+userOutput.transitMinutes/2+' minutes each way, you\'ll earn:</h2>';
@@ -124,7 +124,7 @@ function calcAndWriteToPage(input) {
     'your exercise RDA*!<p class=\"footnote\">*recommended daily allowance</p>';
     document.getElementById('calcCollectiveTreesResult').innerHTML = 'It would be as powerful as planting <strong>'+userOutput.treesPerHousehold.toFixed(0)+' trees</strong> in front of every house and apartment!';
     document.getElementById('forestResult').innerHTML = '<img src=\"img/tree.png\" alt=\"tree emoji\" height=\"30px\"/>'.repeat(userOutput.treesPerHousehold.toFixed(0));
-    document.getElementById('calcCollectivePMResult').innerHTML = 'We would also avoid creating <strong>'+userOutput.lbsPMperDay.toFixed(0)+' lbs</strong> of air pollution particles every day.'
+    document.getElementById('calcCollectivePMResult').innerHTML = 'We\'d also avoid creating <strong>'+userOutput.lbsPMperDay.toFixed(0)+' lbs</strong> of air pollution particles every day.'
     document.getElementById('PMResult').innerHTML = '<img src=\"img/facemask.png\" alt=\"medical mask emoji\" height=\"30px\"/>'.repeat(userOutput.lbsPMperDay.toFixed(0));
     document.getElementById('calcCollectivePMFlavorText').innerHTML = '<p>If we did this <strong>'+userOutput.PMofYouinDays+' days</strong> in a row, the particles avoided would <strong>weigh as much as you do!</strong></p>';
     return userOutput;
